@@ -25,6 +25,7 @@ class PostController extends Controller
             'image' => ['required', 'image', 'max:5120'],
             'caption' => ['nullable', 'string', 'max:2200'],
         ]);
+        $imagePath = $request->file('image')->store('posts', 'public');
         //
     }
 
