@@ -19,6 +19,11 @@ class AuthController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
 
         ]);
+
+        $user = User::create([
+            'name' => $validatedData['name'],
+            
+        ]);
     }
 
     public function login(Request $request) {}
