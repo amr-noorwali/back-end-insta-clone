@@ -62,6 +62,10 @@ class PostController extends Controller
         $validated = $request->validate([
             'caption' => ['nullable', 'string', 'max:2200'],
         ]);
+
+        $post->update([
+            'caption' => $validated['caption'] ?? null,
+        ]);
         //
     }
 
