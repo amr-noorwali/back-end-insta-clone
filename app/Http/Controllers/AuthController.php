@@ -12,5 +12,7 @@ class AuthController extends Controller
     public function login(Request $request) {}
 
     public function me(Request $request) {}
+
+    public function logout(Request $request) {}
     //
 }
