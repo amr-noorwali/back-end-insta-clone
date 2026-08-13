@@ -34,7 +34,11 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function login(Request $request) {}
+    public function login(Request $request) {
+        $validatedData = $request->validate([
+            
+        ]);
+    }
 
     public function me(Request $request) {}
 
