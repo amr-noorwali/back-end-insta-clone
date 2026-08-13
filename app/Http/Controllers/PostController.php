@@ -31,6 +31,11 @@ class PostController extends Controller
             'image_path' => $imagePath,
             'caption' => $validated['caption'] ?? null,
         ]);
+
+        return response()->json([
+            'message' => 'Post created successfully.',
+            'post' => $post,
+        ], 201);
         //
     }
 
