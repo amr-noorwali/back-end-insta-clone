@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
 
+
+
     public function register(Request $request)
     {
         $validatedData = $request->validate([
@@ -33,6 +35,8 @@ class AuthController extends Controller
             'user' => $user,
         ], 201);
     }
+
+
 
     public function login(Request $request)
     {
@@ -59,7 +63,22 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function me(Request $request) {}
+
+
+
+
+
+    public function me(Request $request)
+    {
+        return response()->json([
+            'user' => $request->user(),
+        ], 200);
+    }
+
+
+
+
+
 
     public function logout(Request $request) {}
     //
