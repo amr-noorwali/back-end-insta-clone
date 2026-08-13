@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class post extends Model
 {
 
+    protected $fillable = [
+        'user_id',
+        'image_path',
+        'caption',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
