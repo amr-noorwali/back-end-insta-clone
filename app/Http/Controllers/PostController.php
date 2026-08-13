@@ -58,6 +58,10 @@ class PostController extends Controller
     {
 
         Gate::authorize('update', $post);
+
+        $validated = $request->validate([
+            'caption' => ['nullable', 'string', 'max:2200'],
+        ]);
         //
     }
 
