@@ -26,6 +26,11 @@ class PostController extends Controller
             'caption' => ['nullable', 'string', 'max:2200'],
         ]);
         $imagePath = $request->file('image')->store('posts', 'public');
+
+        $post = $request->user()->posts()->create([
+            'image_path' => $imagePath,
+            'caption' => $validated['caption'] ?? null,
+        ]);
         //
     }
 
