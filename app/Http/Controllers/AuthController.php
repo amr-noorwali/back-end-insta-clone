@@ -50,7 +50,7 @@ class AuthController extends Controller
             ], 401);
         }
 
-        
+        $token = $user->createToken('auth_token')->plainTextToken;
     }
 
     public function me(Request $request) {}
