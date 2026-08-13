@@ -66,6 +66,12 @@ class PostController extends Controller
         $post->update([
             'caption' => $validated['caption'] ?? null,
         ]);
+
+        return response()->json([
+            'message' => 'Post updated successfully.',
+            'post' => $post,
+        ]);
+
         //
     }
 
