@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Sanctum\PersonalAccessToken;
 
 
 class AuthController extends Controller
@@ -80,6 +81,8 @@ class AuthController extends Controller
 
 
 
-    public function logout(Request $request) {}
+    public function logout(Request $request) {
+        
+    }
     //
 }
