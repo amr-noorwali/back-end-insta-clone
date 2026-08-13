@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Follow extends Model
 {
+
+    public function follower(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'follower_id');
+    }
     //
 }
