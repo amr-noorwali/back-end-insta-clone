@@ -54,7 +54,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post): JsonResponse
     {
 
         Gate::authorize('update', $post);
@@ -64,7 +64,8 @@ class PostController extends Controller
         ]);
 
         $post->update([
-            'caption' => $validated['caption'] ?? null,
+            'caption' => $validated['caption'] ?? null, 
+            // here we wil update only the caption
         ]);
 
         return response()->json([
