@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use App\Http\Resources\CommentResource;
 
 class CommentPolicy
 {
