@@ -8,6 +8,7 @@ use App\Models\Post;
 
 class CommentController extends Controller
 {
-    
+    public function index(Post $post) {}
+
     //
 }
