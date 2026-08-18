@@ -8,14 +8,17 @@ use App\Models\Post;
 
 class CommentController extends Controller
 {
-    public function index(Post $post) {
+    public function index(Post $post)
+    {
         $comments = $post->comments()
-        ->with('user')
-        ->oldest()
-        ->paginate(20);
+            ->with('user')
+            ->oldest()
+            ->paginate(20);
 
         return CommentResource::collection($comments);
     }
+
+    public function store(Request $request, Post $post) {}
 
     //
 }
