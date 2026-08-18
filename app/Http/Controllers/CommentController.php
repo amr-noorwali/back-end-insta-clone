@@ -30,7 +30,9 @@ class CommentController extends Controller
 
         $comment->load('user');
 
-        
+        return (new CommentResource($comment))
+            ->response()
+            ->setStatusCode(201);
         
     }
 
