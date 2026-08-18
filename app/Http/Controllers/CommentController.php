@@ -23,6 +23,11 @@ class CommentController extends Controller
             'content' => ['required', 'string', 'max:1000'],
         ]);
 
+        $comment = $post->comments()->create([
+            'user_id' => $request->user()->id,
+            'content' => $validated['content'],
+        ]);
+
         
     }
 
