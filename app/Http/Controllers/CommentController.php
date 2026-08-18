@@ -20,7 +20,8 @@ class CommentController extends Controller
         return CommentResource::collection($comments);
     }
 
-    public function store(Request $request, Post $post) {
+    public function store(Request $request, Post $post)
+    {
         $validated = $request->validate([
             'content' => ['required', 'string', 'max:1000'],
         ]);
@@ -35,10 +36,11 @@ class CommentController extends Controller
         return (new CommentResource($comment))
             ->response()
             ->setStatusCode(201);
-        
     }
 
-    
+
+    public function destroy(Comment $comment) {}
+
 
     //
 }
