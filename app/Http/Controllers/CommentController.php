@@ -18,7 +18,13 @@ class CommentController extends Controller
         return CommentResource::collection($comments);
     }
 
-    public function store(Request $request, Post $post) {}
+    public function store(Request $request, Post $post) {
+        $validated = $request->validate([
+            'content' => ['required', 'string', 'max:1000'],
+        ]);
+
+        
+    }
 
     //
 }
