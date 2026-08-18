@@ -28,6 +28,9 @@ class CommentController extends Controller
             'content' => $validated['content'],
         ]);
 
+        $comment->load('user');
+
+        
         
     }
 
