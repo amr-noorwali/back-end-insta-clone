@@ -13,6 +13,8 @@ class CommentController extends Controller
         ->with('user')
         ->oldest()
         ->paginate(20);
+
+        return CommentResource::collection($comments);
     }
 
     //
