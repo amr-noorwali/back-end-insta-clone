@@ -30,7 +30,9 @@ class LikeController extends Controller
 
         $like->delete();
 
-        
+        return response()->json([
+            'message' => 'Like removed successfully.',
+        ]);
     }
     //
 }
