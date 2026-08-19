@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 
+
 class LikeController extends Controller
 {
+    public function store(Request $request, Post $post):{
+        
+    }
     //
 }
