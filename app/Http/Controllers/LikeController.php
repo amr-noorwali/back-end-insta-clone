@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 
 class LikeController extends Controller
 {
-    public function store(Request $request, Post $post):{
+    public function store(Request $request, Post $post): JsonResponse{
         
     }
     //
