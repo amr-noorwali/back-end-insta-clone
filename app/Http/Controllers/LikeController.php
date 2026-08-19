@@ -14,6 +14,11 @@ class LikeController extends Controller
         $like = $post->likes()->create([
             'user_id' => $request->user()->id,
         ]);
+
+        return response()->json([
+            'message' => 'Post liked successfully.',
+            'like' => $like,
+        ], 201);
     }
     //
 }
