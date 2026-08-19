@@ -9,8 +9,11 @@ use Illuminate\Http\JsonResponse;
 
 class LikeController extends Controller
 {
-    public function store(Request $request, Post $post): JsonResponse{
-        
+    public function store(Request $request, Post $post): JsonResponse
+    {
+        $like = $post->likes()->create([
+            'user_id' => $request->user()->id,
+        ]);
     }
     //
 }
