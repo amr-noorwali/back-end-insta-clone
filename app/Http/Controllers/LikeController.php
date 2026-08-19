@@ -11,7 +11,7 @@ class LikeController extends Controller
 {
     public function store(Request $request, Post $post): JsonResponse
     {
-        $like = $post->likes()->create([
+        $like = $post->likes()->firstOrCreate([
             'user_id' => $request->user()->id,
         ]);
 
@@ -23,7 +23,8 @@ class LikeController extends Controller
 
 
 
-    public function destroy(Request $request, Post $post): JsonResponse {
+    public function destroy(Request $request, Post $post): JsonResponse
+    {
         $like = $post->likes()
             ->where('user_id', $request->user()->id)
             ->firstOrFail();
