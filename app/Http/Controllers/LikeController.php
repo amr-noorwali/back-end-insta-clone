@@ -23,6 +23,6 @@ class LikeController extends Controller
 
 
 
-    public function destroy(Request $request, Post $post):  {}
+    public function destroy(Request $request, Post $post): JsonResponse {}
     //
 }
