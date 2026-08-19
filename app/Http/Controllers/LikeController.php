@@ -28,6 +28,8 @@ class LikeController extends Controller
             ->where('user_id', $request->user()->id)
             ->firstOrFail();
 
+        $like->delete();
+
         
     }
     //
