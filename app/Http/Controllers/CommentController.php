@@ -41,8 +41,10 @@ class CommentController extends Controller
 
     public function destroy(Comment $comment) {
         Gate::authorize('delete', $comment);
-
-        Comment::destroy($comment->id);
+        
+        /** @disregard P1005 */
+        $comment->delete();
+        // Comment::destroy($comment->id);
 
         return response()->json([
             'message' => 'Comment deleted successfully.',

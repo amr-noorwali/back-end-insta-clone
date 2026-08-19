@@ -30,3 +30,30 @@ $comment->load('user');
 $comment->user;
 $comment->load('user');
 $comment->loadMissing('user');
+
+
+
+
+## Comments System
+
+تم تنفيذ نظام التعليقات، ويتيح للمستخدم المسجل:
+
+- عرض تعليقات منشور مع Pagination.
+- إضافة تعليق إلى منشور.
+- حذف تعليقاته فقط.
+- منع حذف تعليقات المستخدمين الآخرين باستخدام `CommentPolicy`.
+- تنظيم بيانات الاستجابة باستخدام `CommentResource`.
+
+### Endpoints
+
+- `GET /api/posts/{post}/comments`
+- `POST /api/posts/{post}/comments`
+- `DELETE /api/comments/{comment}`
+
+### Validation & Security
+
+- محتوى التعليق مطلوب، وبحد أقصى `1000` حرف.
+- الطلب دون Token يرجع `401`.
+- المنشور أو التعليق غير الموجود يرجع `404`.
+- البيانات غير الصحيحة ترجع `422`.
+- محاولة حذف تعليق مستخدم آخر ترجع `403`.
