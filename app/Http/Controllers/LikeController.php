@@ -20,5 +20,9 @@ class LikeController extends Controller
             'like' => $like,
         ], 201);
     }
+
+
+
+    public function destroy(Request $request, Post $post):  {}
     //
 }
