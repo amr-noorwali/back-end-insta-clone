@@ -35,6 +35,12 @@ class LikeController extends Controller
             ->where('user_id', $request->user()->id)
             ->firstOrFail();
 
+        if (! $like) {
+            return response()->json([
+                'message' => 'You have not liked this post.',
+            ], 404);
+        }
+        
         $like->delete();
 
         return response()->json([
