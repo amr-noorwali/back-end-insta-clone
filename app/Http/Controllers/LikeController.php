@@ -15,6 +15,12 @@ class LikeController extends Controller
             'user_id' => $request->user()->id,
         ]);
 
+        if (! $like->wasRecentlyCreated) {
+            return response()->json([
+                'message' => 'You already liked this post.',
+            ], 409);
+        }
+
         return response()->json([
             'message' => 'Post liked successfully.',
             'like' => $like,
